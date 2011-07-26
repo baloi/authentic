@@ -2,10 +2,15 @@ require 'spec_helper'
 
 describe "Logins" do
   describe "GET /logins" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get logins_path
-      response.status.should be(200)
-    end
+    pending "allows login of valid users"
+#    it "allows login of valid users" do
+#      user = User.sample  
+#      visit login_path
+#      click_link "password"
+#      fill_in "Email", :with => user.email
+#      click_button "Submit"
+#      response.status.should be(200)
+#    end
+
   end
 end

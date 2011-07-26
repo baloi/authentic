@@ -1,5 +1,10 @@
 Authtentic::Application.routes.draw do
-  get "users/new"
+  # baloi start
+  #get "users/new"
+  get "sign_up" => "users#new", :as => "sign_up"
+  root :to => "users#new"
+  resources :users
+  # baloi end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
