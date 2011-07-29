@@ -12,12 +12,14 @@ describe UsersController do
   describe "POST 'create'" do
     it "should be able to add a user" do
       num_users = User.count
-      post :create, :user => {:email => 'jan@yahoodoo.com', :password => "mypassword"}
+      email = 'jan@yahoodoo.com'
+      post :create, 
+        :user => {:email => email, :password => "mypassword"}
     
       response.should be_redirect
-      #assert_redirected_to :action => 'list'
-      ##response.should redirect_to(:action => 'list')
-      response.should redirect_to :root
+
+      user = User.find(:all).first
+      user.email.should == email 
 
       User.count.should eql (num_users + 1) 
     end
