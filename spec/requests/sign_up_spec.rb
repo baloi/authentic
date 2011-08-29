@@ -15,17 +15,8 @@ describe "SignUps" do
     it "allows creation of new account" do
       email = "jan@boholo.com"
       password = "kanahan"
-      visit sign_up_path 
-      #click_link "password"
-      fill_in "Email", :with => email
-      fill_in "Password", :with => password 
-      fill_in "Password Confirmation", :with => password 
-      click_button "Submit"
-      # click_on ('') # for button and link
-      #visit "/users/list"
-      #page.should have_content('jan@boholo.com')
-      #page.should have_content("Signed up!")
-
+      signup(email, password)
+      page.should have_content(email)
     end
   end
 

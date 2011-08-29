@@ -2,6 +2,7 @@ Authtentic::Application.routes.draw do
   # baloi start
   #get "users/new"
   get "sign_up" => "users#new", :as => "sign_up"
+  get "login" => "users#login", :as => "login"
   root :to => "users#new"
   resources :users
   # baloi end

@@ -17,6 +17,7 @@ describe UsersController do
         :user => {:email => email, :password => "mypassword"}
     
       response.should be_redirect
+      flash[:notice].should == 'Signed up!' 
 
       user = User.find(:all).first
       user.email.should == email 
