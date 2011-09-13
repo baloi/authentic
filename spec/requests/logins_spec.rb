@@ -8,7 +8,8 @@ describe "Logins" do
       signup(email, password)
   
       login(email, password)
-      #response.status.should be(200)
+
+      page.should have_content 'Logged in!'
     end
 
   end
