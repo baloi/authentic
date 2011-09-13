@@ -1,10 +1,12 @@
 Authtentic::Application.routes.draw do
+  get "sessions/new"
+
   # baloi start
-  #get "users/new"
   get "sign_up" => "users#new", :as => "sign_up"
-  get "login" => "users#login", :as => "login"
+  get "login" => "sessions#new", :as => "login"
   root :to => "users#new"
   resources :users
+  resources :sessions
   # baloi end
 
   # The priority is based upon order of creation:

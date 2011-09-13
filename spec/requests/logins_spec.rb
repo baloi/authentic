@@ -14,3 +14,22 @@ describe "Logins" do
   end
 
 end
+
+# SHOULD THIS BE IN ANOTHER FILE?
+def signup(email, password)
+  visit sign_up_path
+  fill_in "Email", :with => email
+  fill_in "Password", :with => password 
+  fill_in "Password Confirmation", :with => password 
+  click_button "Submit"
+end
+
+def login(email, password)
+  #visit login_path
+  visit '/login' 
+  fill_in "Email", :with => email
+  fill_in "Password", :with => password 
+  # click_link "password"
+  click_button "Submit"
+end
+

@@ -23,11 +23,19 @@ class UsersController < ApplicationController
   end
 
   def login
-    email = params[:user][:email]
-    password = params[:user][:password]
-    if email == nil or password  == nil
-      redirect_to '/users/login' 
+    
+
+    #if email == nil or password  == nil
+    if params[:user] == nil
+      puts "showing login page"
+      @user = User.new    
+      #redirect_to '/users/login' 
     else
+      #email = params[:user][:email]
+      #password = params[:user][:password]
+      email = params[:user][:email]
+      password = params[:user][:password]
+
       user_find = User.new
       user.email = email
       user.password = password
@@ -36,6 +44,7 @@ class UsersController < ApplicationController
                 :conditions => ["email = ? AND password_hash = ?", 
                 email, user.password_hash]
               ).first
+
       redirect_to @user 
     end
   end
