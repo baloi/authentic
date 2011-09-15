@@ -17,6 +17,6 @@ class CreateResident < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :users
+    drop_table :residents
   end
 end
