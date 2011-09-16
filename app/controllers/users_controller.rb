@@ -37,12 +37,12 @@ class UsersController < ApplicationController
       password = params[:user][:password]
 
       user_find = User.new
-      user.email = email
-      user.password = password
-      user.encrypt_password
+      user_find.email = email
+      user_find.password = password
+      user_find.encrypt_password
       @user = User.find(:all, 
                 :conditions => ["email = ? AND password_hash = ?", 
-                email, user.password_hash]
+                email, user_find.password_hash]
               ).first
 
       redirect_to @user 

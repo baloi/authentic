@@ -1,1 +1,7 @@
 > residents, therapist models and controllers until friday
+  * resident model and specs
+  * add, edit delete residents
+  
+> therapists
+
+> resident's therapist(s)
