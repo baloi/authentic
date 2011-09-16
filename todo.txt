@@ -1,6 +1,5 @@
 > residents, therapist models and controllers until friday
-  * resident model and specs
-  * add, edit delete residents
+  * add, edit delete residents (with proper fields)
   
 > therapists
 
