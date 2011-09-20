@@ -1,6 +1,8 @@
-> residents, therapist models and controllers until friday
+> residents, therapist models and controllers until wednesday
   * add, edit delete residents (with proper fields)
   
 > therapists
 
 > resident's therapist(s)
+
+> resident/therapist colored view
