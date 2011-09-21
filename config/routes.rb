@@ -5,7 +5,12 @@ Authtentic::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#destroy", :as => "logout"
-  root :to => "users#new"
+  # baloi todo start
+  # This could be the root if we want to be able to signup anyone
+  #root :to => "users#new"
+  # baloi todo end
+
+  root :to => "sessions#new"
   resources :users
   resources :sessions
   resources :residents

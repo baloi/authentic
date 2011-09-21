@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
   def new
+    @authenticated = false
+    if session[:user_id]
+      @authenticated = true
+    end
   end
 
   def create

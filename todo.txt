@@ -1,3 +1,8 @@
+> disable users#new or signup page
+> check of user is authenticated before showing any resident pages
+  ( see SessionsController#new)
+> add index page
+
 > residents, therapist models and controllers until wednesday
   * add, edit delete residents (with proper fields)
   

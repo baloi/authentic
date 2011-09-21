@@ -1,22 +1,29 @@
-<h1>Login</h1>
+<% if @authenticated %>
+  index page
+<% else %>
+  
+  <h1>Login</h1>
+  
+  
+  <!--%= form_for :user, :url => {:action => "create"} do |f| %-->
+  <!-- form method="POST" action="/users/check_credentials"-->
+  <%= form_tag sessions_path do %>
+    <p>
+      <!--%= f.label :email %> <br /-->
+      <!--%= f.text_field :email %-->
+      <label for="user_email">Email</label> <br />
+      <input type="text" id="user_email" name="user[email]" size="30" />
+    </p>
+  
+    <p>
+      <label for="user_password">Password</label> <br />
+      <input type="password" id="user_password" name="user[password]" size="30" />
+    </p>
+  
+    <p class="button">
+      <input type="submit" value="Submit" id="user_submit" name="commit"/><br/>
+    </p>
+  <% end %>
 
-
-<!--%= form_for :user, :url => {:action => "create"} do |f| %-->
-<!-- form method="POST" action="/users/check_credentials"-->
-<%= form_tag sessions_path do %>
-  <p>
-    <!--%= f.label :email %> <br /-->
-    <!--%= f.text_field :email %-->
-    <label for="user_email">Email</label> <br />
-    <input type="text" id="user_email" name="user[email]" size="30" />
-  </p>
-
-  <p>
-    <label for="user_password">Password</label> <br />
-    <input type="password" id="user_password" name="user[password]" size="30" />
-  </p>
-
-  <p class="button">
-    <input type="submit" value="Submit" id="user_submit" name="commit"/><br/>
-  </p>
 <% end %>
+
