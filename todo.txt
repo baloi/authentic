@@ -1,3 +1,5 @@
+> baloi's macbook is now born!
+
 > disable users#new or signup page
 > check of user is authenticated before showing any resident pages
   ( see SessionsController#new)
