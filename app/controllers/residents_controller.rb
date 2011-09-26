@@ -1,6 +1,7 @@
 class ResidentsController < ApplicationController
   # GET /residents
   # GET /residents.xml
+  before_filter :login_required
   def index
     @residents = Resident.all
 
@@ -12,6 +13,7 @@ class ResidentsController < ApplicationController
 
   # GET /residents/1
   # GET /residents/1.xml
+  before_filter :login_required
   def show
     @resident = Resident.find(params[:id])
 
@@ -23,6 +25,7 @@ class ResidentsController < ApplicationController
 
   # GET /residents/new
   # GET /residents/new.xml
+  before_filter :login_required
   def new
     @resident = Resident.new
 
@@ -33,12 +36,14 @@ class ResidentsController < ApplicationController
   end
 
   # GET /residents/1/edit
+  before_filter :login_required
   def edit
     @resident = Resident.find(params[:id])
   end
 
   # POST /residents
   # POST /residents.xml
+  before_filter :login_required
   def create
     @resident = Resident.new(params[:resident])
 
@@ -55,6 +60,7 @@ class ResidentsController < ApplicationController
 
   # PUT /residents/1
   # PUT /residents/1.xml
+  before_filter :login_required
   def update
     @resident = Resident.find(params[:id])
 
@@ -71,6 +77,7 @@ class ResidentsController < ApplicationController
 
   # DELETE /residents/1
   # DELETE /residents/1.xml
+  before_filter :login_required
   def destroy
     @resident = Resident.find(params[:id])
     @resident.destroy
