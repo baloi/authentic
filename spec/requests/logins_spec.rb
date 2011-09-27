@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "Logins" do
   describe "GET /logins" do
     it "should allow login of valid users" do
+      mock_signup_and_login
       email = "jan@boholo.com"
       password = "kanahan"
       signup(email, password)

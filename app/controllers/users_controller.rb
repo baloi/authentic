@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
+  
+  before_filter :login_required
   def new
     @user = User.new
   end
 
   # POST /users
+  before_filter :login_required
   def create
     @user = User.new(params[:user])
     
@@ -14,17 +17,17 @@ class UsersController < ApplicationController
     end
   end
 
+  before_filter :login_required
   def list
     @users = User.find(:all)
   end
 
+  before_filter :login_required
   def show
     @user = User.find(params[:id])
   end
 
   def login
-    
-
     #if email == nil or password  == nil
     if params[:user] == nil
       puts "showing login page"

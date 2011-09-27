@@ -25,3 +25,39 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 end
 
+def signup(email, password)
+  visit sign_up_path
+  fill_in "Email", :with => email
+  fill_in "Password", :with => password 
+  fill_in "Password Confirmation", :with => password 
+  click_button "Submit"
+end
+
+def login(email, password)
+  visit login_path
+  fill_in "Email", :with => email
+  fill_in "Password", :with => password 
+  # click_link "password"
+  click_button "Submit"
+end
+
+def admin_login(email, password)
+  User.create(:email => email, :password => password)
+  login(email, password)
+end
+
+def mock_signup_and_login
+  email = "wererw@iuiwoer.com", password = 'werwfiiuo'
+  user = User.create(:email => email, :password => password)
+  #login(email, password)
+  session[:user_id] = user.id
+end
+
+def logout
+  visit logout_path
+end
+
+def logout_and_refresh
+  logout
+  User.destroy_all
+end
