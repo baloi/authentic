@@ -3,15 +3,10 @@ require 'spec_helper'
 describe UsersController do
   include SpecHelper
   before (:each) do
-#    email = 'b@yahoo.com'
-#    password = 'abcd'
-#    User.create(:email => email, :password => password)
-#    login(email, password)
   end
 
   after(:each) do
-    logout 
-    User.destroy_all
+    logout_and_refresh
   end
 
   describe "GET 'new'" do
@@ -43,18 +38,6 @@ describe UsersController do
       logout_and_refresh
     end
   
-  end
-
-  describe "Login" do
-    it "should allow login of valid users" do
-      user = mock_signup
-  
-      puts "password = >>>#{user.password}<<<"
-      login(user.email, user.password)
-  
-      page.should have_content 'Logged in!'
-    end
-
   end
 
 end

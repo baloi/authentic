@@ -1,5 +1,13 @@
 <% if @authenticated %>
-  index page
+  <table>
+    <tr>
+      <td><a href="logout">Logout</a> </td>
+    </tr>
+    <tr>
+      <td><%= link_to "Residents", residents_path %> <td>
+    </tr>
+
+  </table>
 <% else %>
   
   <h1>Login</h1>

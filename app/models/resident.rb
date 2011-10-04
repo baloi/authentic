@@ -18,17 +18,17 @@ class Resident < ActiveRecord::Base
     n[1].strip
   end
 
-#  def self.sort_by_insurance
-#    find(:all, 
-#      :order => 'pt_minutes_per_day DESC, pt_days_per_week DESC, insurance')
-#  end
-#
-#  def self.for_saturday
-#    find(:all, :conditions => "pt_days_per_week = 6")
-#  end
-#
-#  def self.insurance_types
-#    ["Med A", "Med B", "Medicaid", "HMO", "RHMO", "VA"]
-#  end
+  def self.sort_by_insurance
+    find(:all, 
+      :order => 'pt_minutes_per_day DESC, pt_days_per_week DESC, insurance')
+  end
+
+  def self.for_saturday
+    find(:all, :conditions => "pt_days_per_week = 6")
+  end
+
+  def self.insurance_types
+    ["Med A", "Med B", "Medicaid", "HMO", "RHMO", "VA"]
+  end
 
 end

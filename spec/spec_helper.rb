@@ -46,7 +46,8 @@ module SpecHelper
   
   def mock_signup
     visit root_path
-    email = "wererw@iuiwoer.com", password = 'werwfiiuo'
+    email = "wererw@iuiwoer.com"
+    password = 'werwfiiuo'
     user = User.create(:email => email, :password => password)
   end
 

@@ -1,8 +1,3 @@
-> baloi's macbook is now born!
-
-> disable users#new or signup page
-> check of user is authenticated before showing any resident pages
-  ( see SessionsController#new)
 > add index page
 
 > residents, therapist models and controllers until wednesday
@@ -13,3 +8,7 @@
 > resident's therapist(s)
 
 > resident/therapist colored view
+
+D check of user is authenticated before showing any resident pages
+  ( see SessionsController#new)
+
