@@ -18,6 +18,7 @@ group :test do
   gem "capybara"
   gem "guard-rspec"
   gem "libnotify"
+  gem "growl"
 end
 # baloi end
 

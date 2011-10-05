@@ -1,3 +1,6 @@
+D resident belongs to physical therapist
+> resident belongs to occupational therapist
+
 > add index page
 
 > residents, therapist models and controllers until wednesday

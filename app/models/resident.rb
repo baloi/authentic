@@ -2,7 +2,7 @@ class Resident < ActiveRecord::Base
   #has_many :resident_sessions
   #has_many :sessions, :through => :resident_sessions
 
-  #belongs_to :physical_therapist
+  belongs_to :physical_therapist
   #belongs_to :occupational_therapist
 
   validates_presence_of :name
