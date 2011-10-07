@@ -1,4 +1,6 @@
 D resident belongs to physical therapist
+  - data model for physical/occupational therapist -> resident done
+  - pt to resident has and belongs to done
 > resident belongs to occupational therapist
 
 > add index page
