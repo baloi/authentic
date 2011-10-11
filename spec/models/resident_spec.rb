@@ -13,6 +13,18 @@ describe Resident do
     res.first_name.should == 'Fopey'
   end
 
+  it "should have one or more treatments" do
+    treatment_description = "just a PT Treatment session"
+    treatment = PTTreatment.create(:description => treatment_description)
+    resident = Resident.create(:name => "Resine, Mario")
+    resident.treatments << treatment
+ 
+    resident.save
+
+    r = Resident.find(:first)
+    r.treatments.first.description.should == treatment_description 
+  end  
+
   it "should have treatment time per day" do
     r1 = Resident.new
     r1.name = "Barete, Grace"

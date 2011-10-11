@@ -2,6 +2,8 @@ class Resident < ActiveRecord::Base
   #has_many :resident_sessions
   #has_many :sessions, :through => :resident_sessions
 
+  has_many :treatments
+
   belongs_to :physical_therapist
   #belongs_to :occupational_therapist
 

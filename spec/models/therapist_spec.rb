@@ -20,7 +20,17 @@ describe Therapist do
     pt = PhysicalTherapist.create(:name => "Pasyalta, Luna")
     
     pt.class.should == PhysicalTherapist
-    puts "pt type == >>>#{pt.type}<<<"
-    puts "pt class == >>>#{pt.class}<<<"
+    #puts "pt type == >>>#{pt.type}<<<"
+    #puts "pt class == >>>#{pt.class}<<<"
+  end
+
+  it "should have one or more treatments" do
+    therapist_name = "bal"
+    therapist = PhysicalTherapist.create(:name => therapist_name)
+    treatment_description = "just a PT Treatment session"
+    treatment = PTTreatment.create(:description => treatment_description)
+    therapist.treatments << treatment
+
+    therapist.treatments.first.description.should == treatment_description 
   end
 end
