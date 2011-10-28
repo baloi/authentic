@@ -1,3 +1,7 @@
+* make it useful
+  1 daily calendar which is updated by evaluating therapists and schedule master
+  2 schedules which can be checked for accuracy, display crossreferenced data
+    (by floor/time/therapist/resident)
 * why should I continue with this project?
   - closure of the project. JUST GET THIS THING DONE
   - MAKE LIFE EASIER FOR YOU AND YOUR TEAM
