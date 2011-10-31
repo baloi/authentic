@@ -28,7 +28,7 @@ class ResidentsController < ApplicationController
   before_filter :login_required
   def new
     @resident = Resident.new
-
+    @therapists = Therapist.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @resident }
