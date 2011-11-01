@@ -1,3 +1,5 @@
+> check how updated your current copy of the scheduler data model is for 20 minutes then 15 minute break, then code tests/views
+
 D resident belongs to physical therapist
   - data model for physical/occupational therapist -> resident done
   - pt to resident has and belongs to done
