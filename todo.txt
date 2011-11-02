@@ -1,4 +1,9 @@
-> check how updated your current copy of the scheduler data model is for 20 minutes then 15 minute break, then code tests/views
+> encode current MAGNET board 
+> focus on CASELOADS only and 'MAGNETS' as fast as possible
+  (Wednesday morning to Thursday night)
+
+> rehabday -> caseload model and tests 
+
 
 D resident belongs to physical therapist
   - data model for physical/occupational therapist -> resident done

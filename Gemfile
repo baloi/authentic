@@ -18,7 +18,9 @@ group :test do
   gem "capybara"
   gem "guard-rspec"
   gem "libnotify"
+  #gem "rb-fsevent"
   #gem "growl"
+  #gem "growl-notify"
 end
 # baloi end
 

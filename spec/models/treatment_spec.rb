@@ -24,4 +24,13 @@ describe Treatment do
     t.resident.name.should == resident_name 
     
   end
+
+  it 'should belong to a caseload' do
+    caseload = Caseload.create 
+    treatment = PTTreatment.create(
+        :description => "just a PT Treatment session")
+    treatment.caseload = caseload 
+
+    treatment.caseload.id.should == caseload.id 
+  end
 end

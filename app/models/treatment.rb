@@ -4,7 +4,7 @@ class Treatment < ActiveRecord::Base
 
   belongs_to :therapist#, :required => false
   belongs_to :resident
-
+  belongs_to :caseload
 #  def self.find_all_groups
 #    session_type = "Group"
 #    find(:all, :conditions => ["type LIKE ? ", "%#{session_type}%"])
