@@ -1,4 +1,12 @@
+> Fix this error:
+  (in http://localhost:3000/therapists/3/edit)
+  Showing /Users/baloi/play/authentic/app/views/therapists/_form.html.erb where line #1 raised: 
+  undefined method `occupational_therapist_path' for #<#<Class:0x00000100ac9aa8>:0x00000100ff29f8>
+
 > therapists test and views, just for data entry man...:
+  - delete therapist make it work
+  - therapist/1 does not work if there is no record yet in db for therapist
+ 
 > encode current MAGNET board 
 > focus on CASELOADS only and 'MAGNETS' as fast as possible
   (Wednesday morning to Thursday night)

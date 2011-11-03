@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def create_therapist_from_params(obj_class_name, parameters)
+    obj_class = Object.const_get(obj_class_name)
+    new_obj = obj_class.new(parameters)
+  end
+
+
 end

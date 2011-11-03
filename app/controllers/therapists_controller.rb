@@ -1,17 +1,25 @@
 class TherapistsController < ApplicationController
   # GET /therapists
   # GET /therapists.xml
+  before_filter :login_required
   def index
+    list
+    #render :action => 'list'
+  end
+
+  before_filter :login_required
+  def list
     @therapists = Therapist.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @therapists }
+    #  format.xml  { render :xml => @therapists }
     end
   end
 
   # GET /therapists/1
   # GET /therapists/1.xml
+  before_filter :login_required
   def show
     @therapist = Therapist.find(params[:id])
 
@@ -23,6 +31,7 @@ class TherapistsController < ApplicationController
 
   # GET /therapists/new
   # GET /therapists/new.xml
+  before_filter :login_required
   def new
     @therapist = Therapist.new
 
@@ -33,14 +42,24 @@ class TherapistsController < ApplicationController
   end
 
   # GET /therapists/1/edit
+  before_filter :login_required
   def edit
     @therapist = Therapist.find(params[:id])
   end
 
   # POST /therapists
   # POST /therapists.xml
+  before_filter :login_required
   def create
-    @therapist = Therapist.new(params[:therapist])
+    @therapist = create_therapist_from_params(params[:therapist][:type], 
+                  params[:therapist])
+
+    if @therapist.save
+      flash[:notice] = 'Therapist was successfully created.'
+      redirect_to :action => 'list'
+    else
+      render :action => 'new'
+    end
 
     respond_to do |format|
       if @therapist.save
@@ -53,8 +72,10 @@ class TherapistsController < ApplicationController
     end
   end
 
+
   # PUT /therapists/1
   # PUT /therapists/1.xml
+  before_filter :login_required
   def update
     @therapist = Therapist.find(params[:id])
 
@@ -71,6 +92,7 @@ class TherapistsController < ApplicationController
 
   # DELETE /therapists/1
   # DELETE /therapists/1.xml
+  before_filter :login_required
   def destroy
     @therapist = Therapist.find(params[:id])
     @therapist.destroy

@@ -10,6 +10,16 @@
       </ul>
     </div>
   <% end %>
+  <p><label for="therapist_name">Name</label><br/>
+  <%= text_field 'therapist', 'name'  %></p>
+
+  <p><label for="therapist_type">Type</label><br/>
+  <select id='therapist_type', name='therapist[type]'>
+    <option value="PhysicalTherapist">PT</option>
+    <option value="OccupationalTherapist">OT</option>
+  </select>
+  </p>
+  
 
   <div class="actions">
     <%= f.submit %>
