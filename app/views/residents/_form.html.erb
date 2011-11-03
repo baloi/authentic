@@ -36,15 +36,12 @@
 <%= text_field 'resident', 'room'  %></p>
 
 <p><label for="resident_insurance">Insurance</label><br/>
-  <%= resident_insurace_select %>
+  <%= resident_insurace_select.html_safe %>
 <!-- %= text_field 'resident', 'insurance'  %></p-->
 </p>
 
 <p><label for="resident_physical_therapist_id">Physical Therapist</label><br/>
   <%= select 'resident', 'physical_therapist_id', @therapists  %></p>
-
-
-
   <div class="actions">
     <%= f.submit %>
   </div>
