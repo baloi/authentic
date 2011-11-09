@@ -1,3 +1,5 @@
+### $ pry -r ./config/environment
+
 > Fix this error:
   (in http://localhost:3000/therapists/3/edit)
   Showing /Users/baloi/play/authentic/app/views/therapists/_form.html.erb where line #1 raised: 
