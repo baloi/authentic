@@ -41,7 +41,8 @@
 </p>
 
 <p><label for="resident_physical_therapist_id">Physical Therapist</label><br/>
-  <%= select 'resident', 'physical_therapist_id', @therapists  %></p>
+  <!--%= select 'resident', 'physical_therapist_id', @therapists  %></p>-->
+  <%= physical_therapist_select.html_safe %>
   <div class="actions">
     <%= f.submit %>
   </div>
