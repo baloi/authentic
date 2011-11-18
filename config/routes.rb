@@ -1,4 +1,6 @@
 Authtentic::Application.routes.draw do
+  get "magnets/list"
+
   get "sessions/new"
 
   # baloi start

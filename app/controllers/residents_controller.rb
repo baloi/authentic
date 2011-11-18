@@ -23,6 +23,7 @@ class ResidentsController < ApplicationController
     end
   end
 
+
   # GET /residents/new
   # GET /residents/new.xml
   before_filter :login_required
@@ -38,6 +39,7 @@ class ResidentsController < ApplicationController
   # GET /residents/1/edit
   before_filter :login_required
   def edit
+    @therapists = Therapist.find(:all)
     @resident = Resident.find(params[:id])
   end
 

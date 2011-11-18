@@ -1,14 +1,28 @@
 <h1>Listing residents</h1>
 
+<a href='/magnets/list'>magnets</a> <br/>
+
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+  <% for column in Resident.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+    <th>PT</th>
   </tr>
-
+<% i=0 %>
 <% @residents.each do |resident| %>
+  <% i += 1 %>
+  <% if i % 2 != 0 %>
+  <tr bgcolor='#AAAAAA'>
+  <% else %>
   <tr>
+  <% end %>
+  <% for column in Resident.content_columns %>
+    <!-- Baloi, add something here to identify the field inside "td" -->
+    <td id='resident_<%= resident.id %>_<%= column.name %>'><%=h resident.send(column.name) %></td>
+  <% end %>
+    <td><%= resident.physical_therapist.name %>
+
     <td><%= link_to 'Show', resident %></td>
     <td><%= link_to 'Edit', edit_resident_path(resident) %></td>
     <td><%= link_to 'Destroy', resident, :confirm => 'Are you sure?', :method => :delete %></td>

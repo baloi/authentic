@@ -37,7 +37,7 @@ module ApplicationHelper
     @therapists.each do |therapist|
       selected = ''
       if @resident.id != nil
-        if @resident.physical_therapist.id != nil && therapist == @resident.physical_therapist.id
+        if @resident.physical_therapist.id != nil && therapist.id == @resident.physical_therapist.id
           selected = " selected='yes'"
         end
       end
